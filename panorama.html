@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor Panorámico</title>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f8f8f8; /* Color de fondo para que el visor tenga contraste */
+        }
+
+        #panorama {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="panorama"></div>
+
+    <script>
+   pannellum.viewer('panorama', {
+    "type": "equirectangular", // Imagen panorámica
+    "panorama": "img/IMG_1368.JPG", // Ruta de la imagen
+    "haov": 180, // Ángulo de visión horizontal (ajusta si es necesario)
+    "vaov": 90,  // Ángulo de visión vertical
+    "vOffset": 0, // No inclinar la imagen verticalmente
+    "autoLoad": true, // Cargar la imagen automáticamente
+    "hfov": 90,  // Zoom inicial (ajústalo entre 80 y 100 según necesites)
+    "minHfov": 80, // Límite mínimo de zoom (para evitar alejarse demasiado)
+    "maxHfov": 120, // Límite máximo de zoom (para permitir un leve acercamiento)
+    "yaw": -30, // Inicia con un ángulo inclinado hacia la izquierda (ajusta entre -30 y -60 si es necesario)
+    "pitch": 0, // No inclinar la vista verticalmente
+    "showControls": true, // Mostrar controles de navegación
+    "compass": true // Agregar brújula opcional
+});
+
+
+
+    </script>
+
+</body>
+</html>

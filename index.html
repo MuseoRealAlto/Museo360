@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Virtual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/panolens@0.12.0/build/panolens.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+   <!-- Navbar -->
+<!-- Navbar -->
+<nav class="bg-red-600 p-4 text-white flex justify-between items-center">
+    <h1 class="text-xl font-bold">Museo Real Alto</h1>
+
+    <!-- Botón del menú en móviles -->
+    <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+    </button>
+
+    <!-- Menú principal (visible en pantallas grandes) -->
+    <ul id="menu" class="hidden md:flex space-x-4">
+        <li><a href="#AcercaDe" class="nav-link">Acerca de Nosotros</a></li>
+        <li><a href="#exhibiciones" class="nav-link">Exhibiciones</a></li>
+        <li><a href="#museo" class="nav-link">Acerca del Museo</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+    </ul>
+</nav>
+
+<!-- Menú desplegable en móviles (inicialmente oculto) -->
+<ul id="mobile-menu" class="hidden flex flex-col bg-red-700 text-white p-4 space-y-2 md:hidden">
+    <li><a href="#AcercaDe" class="nav-link block">Acerca de Nosotros</a></li>
+    <li><a href="#exhibiciones" class="nav-link block">Exhibiciones</a></li>
+    <li><a href="#museo" class="nav-link block">Acerca del Museo</a></li>
+    <li><a href="#contacto" class="nav-link block">Contacto</a></li>
+</ul>
+
+
+
+    <div id="container-banner">
+        <span>
+            <img src="./img/IMG_1474.JPG" alt="imagen banner" width="1280" height="600">
+        </span>
+    </div>
+
+    <section id="AcercaDe" class="text-center max-w-3xl mx-auto p-6">
+        <h1 class="text-4xl font-bold text-gray-800">El Proyecto 360 de Museo Real Alto</h1>
+        <p class="text-lg text-gray-600 mt-4 leading-relaxed">
+            Real Alto 360 es una experiencia inmersiva que permite a los visitantes explorar la riqueza histórica y
+            arqueológica del Complejo Cultural Real Alto desde cualquier parte del mundo.
+            A través de tecnología esférica 360°, esta serie de videos transporta
+            a los espectadores al corazón de uno de los yacimientos más importantes de América,
+            brindando una perspectiva única de sus espacios y su legado ancestral.
+        </p>
+        <p class="text-lg text-gray-600 mt-4 leading-relaxed">
+            Concebida para ofrecer un acceso sin precedentes, esta experiencia digital
+            permite recorrer el Museo de Sitio “El Mogote”, descubrir la disposición del Recinto Ceremonial de Valdivia
+            y
+            adentrarse en la vida de las primeras aldeas agro-alfareras del continente. Los visitantes pueden sentir
+            la atmósfera de los laboratorios arqueológicos, caminar entre las reconstrucciones etnográficas o sobrevolar
+            el asentamiento para
+            una vista panorámica de su distribución.
+        </p>
+    </section>
+
+    <section id="exhibiciones" class="text-center max-w-4xl mx-auto p-6">
+        <h1 class="text-5xl font-bold text-gray-800">Exhibiciones</h1>
+        <p class="text-lg text-gray-600 mt-4 leading-relaxed">
+            Explora nuestras exhibiciones destacadas, donde la historia y la cultura se encuentran. Descubre artefactos
+            únicos,
+            reconstrucciones detalladas y material interactivo que te llevará a través del tiempo y el espacio del
+            Complejo Cultural Real Alto.
+        </p>
+
+        <!-- Contenedor para la imagen panorámica con Pannellum -->
+        <div style="display: flex; justify-content: center; padding: 20px;">
+            <iframe src="panorama.html" width="600px" height="400px" frameborder="0" allowfullscreen
+                style="border: 8px solid #ccc; border-radius: 10px; box-shadow: 4px 4px 15px rgba(0,0,0,0.2);">
+            </iframe>
+
+        </div>
+    </section>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script src="./main.js"></script>
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            const mobileMenu = document.getElementById("mobile-menu");
+            mobileMenu.classList.toggle("hidden"); // Muestra u oculta el menú en móviles
+        });
+    </script>
+    
+    
+</body>
+
+</html>
